@@ -5,6 +5,7 @@
         <img
           :src="character.image.url"
           class="w-full h-64 md:h-64 object-cover"
+          @error="handleImageError"
         />
         <span
           class="absolute top-0 right-0 text-white px-2 mt-2 mr-2 text-xs rounded font-bold bg-red-800"
@@ -37,5 +38,12 @@ export default {
       return `/character/${this.character.id}`
     },
   },
+  methods: {
+    handleImageError(e) {
+      e.target.src =
+        'https://res.cloudinary.com/johnprops/image/upload/c_scale,f_auto,w_480/v1612654067/superheroes/Placeholder_couple_superhero_i4rncf.png'
+    },
+  },
 }
 </script>
+

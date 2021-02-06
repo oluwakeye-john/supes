@@ -26,8 +26,8 @@ export default {
       default: '',
     },
     value: {
-      type: Number || String,
-      default: 0,
+      type: String,
+      default: '',
     },
   },
   computed: {

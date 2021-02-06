@@ -1,6 +1,9 @@
 <template>
-  <div class="landing-container">
+  <div class="landing-container" @mousemove="handleCursor">
     <Navbar absolute />
+    <div ref="cursor" class="cursor">
+      <div class="cursor__dot" />
+    </div>
     <div class="landing-container__image" />
     <div class="landing-flex">
       <div class="px-6 md:px-20">
@@ -34,6 +37,10 @@ export default {
   },
   methods: {
     ...mapActions(['fetchingAction']),
+    handleCursor(e) {
+      this.$refs.cursor.style.top = e.pageY + 'px'
+      this.$refs.cursor.style.left = e.pageX + 'px'
+    },
     submit() {
       this.fetchingAction(true)
       this.$router.push(`/search?q=${this.search}`)
@@ -46,6 +53,7 @@ export default {
 .landing-container {
   position: relative;
   font-size: 14px;
+  cursor: none;
 }
 
 .landing-flex {
@@ -64,10 +72,30 @@ export default {
   left: 0;
   height: 100%;
   width: 100%;
-  background-image: url('../../assets/bg6.jpg');
+  background-image: url('https://res.cloudinary.com/johnprops/image/upload/c_scale,f_auto,q_100,w_1400/v1612650797/superheroes/bg6_hi23sj.jpg');
   background-position: bottom;
   background-size: cover;
   background-repeat: no-repeat;
   opacity: 0.3;
+}
+
+.cursor {
+  position: absolute;
+  transition: 0.1s ease-out;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #17bd70;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cursor__dot {
+  width: 2px;
+  height: 2px;
+  background-color: #17bd70;
 }
 </style>
