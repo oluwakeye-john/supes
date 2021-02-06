@@ -40,7 +40,12 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL: `${process.env.BASE_URL}/${process.env.API_TOKEN}`,
+    headers: {
+      origin: 'http://localhost:3000',
+    },
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
