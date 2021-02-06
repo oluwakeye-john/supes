@@ -25,6 +25,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 export default {
   data() {
     return {
@@ -32,7 +33,9 @@ export default {
     }
   },
   methods: {
+    ...mapActions(['fetchingAction']),
     submit() {
+      this.fetchingAction(true)
       this.$router.push(`/search?q=${this.search}`)
     },
   },

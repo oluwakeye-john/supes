@@ -4,7 +4,7 @@
       <div class="relative">
         <img
           :src="character.image.url"
-          class="w-full h-40 md:h-64 object-cover"
+          class="w-full h-64 md:h-64 object-cover"
         />
         <span
           class="absolute top-0 right-0 text-white px-2 mt-2 mr-2 text-xs rounded font-bold bg-red-800"

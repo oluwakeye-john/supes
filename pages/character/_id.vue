@@ -3,14 +3,16 @@
     <Navbar />
     <Spinner v-if="fetching" />
     <MarginalContainer v-else>
-      <div class="flex justify-between flex-col md:flex-row">
+      <div class="flex justify-between flex-col md:flex-row mb-10">
         <img
           class="detail-image w-full md:w-4/12 object-cover"
           :src="character.image.url"
         />
 
         <div class="w-full md:w-7/12 mt-5 md:mt-0">
-          <h3 class="text-white text-3xl mb-8">{{ character.name }}</h3>
+          <h3 class="text-white text-3xl mb-8 font-bold">
+            {{ character.name }}
+          </h3>
 
           <InfoTable :items="tableItems" />
 
@@ -36,6 +38,11 @@ export default {
       character: () => ({}),
     }
   },
+  head() {
+    return {
+      title: this.pageTitle,
+    }
+  },
   computed: {
     powerstats() {
       return this.character.powerstats
@@ -56,6 +63,13 @@ export default {
         { name: 'Gender', value: this.appearance.gender },
         { name: 'Occupation', value: this.work.occupation },
       ]
+    },
+    pageTitle() {
+      if (this.character.name) {
+        return `${this.character.name} | Superheroes`
+      } else {
+        return `Superheroes`
+      }
     },
   },
   mounted() {

@@ -5,10 +5,10 @@
 
     <MarginalContainer v-else>
       <h1 class="text-white mb-10 text-2xl">
-        Search result for {{ search }} ({{ results.length }})
+        Search result for {{ search }} ({{ searchResult.length }})
       </h1>
 
-      <div v-if="!results.length">
+      <div v-if="!searchResult.length">
         <img
           class="object-cover w-40 m-auto mt-5"
           src="../assets/not-found.png"
@@ -18,9 +18,9 @@
           <p class="text-sm mt-2">Check Hades, just in case...</p>
         </div>
       </div>
-      <div class="grid grid-cols-1 gap-6 md:gap-12 md:grid-cols-4">
+      <div class="grid grid-cols-1 gap-6 md:gap-12 md:grid-cols-4 mb-10">
         <Card
-          v-for="(character, i) in results"
+          v-for="(character, i) in searchResult"
           :key="i"
           :character="character"
         />
@@ -30,32 +30,29 @@
 </template>
 
 <script>
-import { AXIOS_REQUESTS } from '../services/types'
+import { mapActions, mapState } from 'vuex'
 export default {
   data() {
     return {
-      fetching: true,
       search: '',
-      results: [],
     }
+  },
+  head() {
+    return {
+      title: `Search result for ${this.search} | Superheroes`,
+    }
+  },
+  computed: {
+    ...mapState({ fetching: (state) => state.fetching }),
+    ...mapState({ searchResult: (state) => state.searchResult }),
   },
   mounted() {
     const query = this.$route.query
     this.search = query.q
-    this.get()
+    this.searchAction(this.search)
   },
   methods: {
-    async get() {
-      const response = await this.$axios.$get(
-        AXIOS_REQUESTS.SEARCH(this.search)
-      )
-      this.fetching = false
-      if (response.results) {
-        this.results = response.results
-      } else {
-        this.results = []
-      }
-    },
+    ...mapActions(['searchAction']),
   },
 }
 </script>
