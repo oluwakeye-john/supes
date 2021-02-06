@@ -1,17 +1,35 @@
 <template>
-  <div class="px-6 md:px-20 py-3 flex justify-between items-center">
-    <img class="navbar__image" src="../assets/superhero.svg" />
+  <div
+    class="px-6 md:px-20 py-3 flex justify-between items-center"
+    :class="{ 'navbar--absolute': absolute }"
+  >
+    <nuxt-link exact to="/">
+      <img class="navbar__image" src="../assets/superhero.svg" />
+    </nuxt-link>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    absolute: {
+      type: Boolean,
+      default: false,
+    },
+  },
+}
 </script>
 
 <style scoped>
+.navbar--absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
 .navbar__image {
   width: 70px;
   height: 70px;
-  animation: slide 1.5s ease-in-out infinite alternate;
+  animation: slide 2s ease-in-out infinite alternate;
 }
 </style>

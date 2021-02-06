@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <Navbar />
+    <!-- <Navbar /> -->
     <Nuxt />
   </div>
 </template>
@@ -38,17 +38,14 @@ body {
   0% {
     transform: translateY(0);
   }
-  /* 25% {
-    transform: translateY(10px);
-  }
-  50% {
-    transform: translateY(0);
-  }
-  75% {
-    transform: translateY(-10px);
-  } */
   100% {
     transform: translateY(15px);
+  }
+}
+
+@keyframes spin2 {
+  to {
+    transform: rotate(360deg) scale(1.1);
   }
 }
 </style>
