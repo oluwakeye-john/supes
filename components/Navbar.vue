@@ -6,6 +6,12 @@
     <nuxt-link exact to="/">
       <img class="navbar__image" src="../assets/superhero.svg" />
     </nuxt-link>
+
+    <p class="text-gray-500 font-bold text-sm hover:text-primary">
+      <a href="https://twitter.com/oluwakeyejohn" target="_blank"
+        >By Oluwakeye John 👨‍💻
+      </a>
+    </p>
   </div>
 </template>
 

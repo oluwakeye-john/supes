@@ -5,7 +5,7 @@
     <div class="landing-flex">
       <div class="px-6 md:px-20">
         <h1 class="text-white text-3xl md:text-5xl font-bold mb-10">
-          All your supers in one place. Villians and Heroes
+          All your supes in one place. Villians and Heroes
         </h1>
         <form
           class="flex flex-col md:flex-row md:justify-center"
@@ -61,7 +61,7 @@ export default {
   left: 0;
   height: 100%;
   width: 100%;
-  background-image: url('../../assets/bg2.jpg');
+  background-image: url('../../assets/bg6.jpg');
   background-position: bottom;
   background-size: cover;
   background-repeat: no-repeat;
