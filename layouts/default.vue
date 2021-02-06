@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="container">
+    <Navbar />
     <Nuxt />
   </div>
 </template>
@@ -26,5 +27,28 @@ html {
 
 body {
   @apply bg-bgColor;
+}
+
+.container {
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateY(0);
+  }
+  /* 25% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(-10px);
+  } */
+  100% {
+    transform: translateY(15px);
+  }
 }
 </style>
