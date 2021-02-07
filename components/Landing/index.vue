@@ -7,8 +7,19 @@
     <div class="landing-container__image" />
     <div class="landing-flex">
       <div class="px-6 md:px-20">
-        <h1 class="text-white text-3xl md:text-5xl font-bold mb-10">
-          All your supes in one place. Villians and Heroes
+        <h1
+          ref="heroText"
+          class="text-white text-3xl md:text-5xl font-bold mb-10 heroText"
+        >
+          <span class="word">All </span>
+          <span class="word">your </span>
+          <span class="word">supes </span>
+          <span class="word">in </span>
+          <span class="word">one </span>
+          <span class="word">place. </span>
+          <span class="word">Villians </span>
+          <span class="word">and </span>
+          <span class="word">Heroes. </span>
         </h1>
         <form
           class="flex flex-col md:flex-row md:justify-center"
@@ -29,11 +40,24 @@
 
 <script>
 import { mapActions } from 'vuex'
+import { TimelineLite, Back } from 'gsap'
 export default {
   data() {
     return {
       search: '',
     }
+  },
+  mounted() {
+    const timeline = new TimelineLite()
+
+    timeline.to('.word', {
+      duration: 0.8,
+      opacity: 1,
+      y: 0,
+      stagger: 0.1,
+      ease: Back.easeInOut,
+      color: '#fff',
+    })
   },
   methods: {
     ...mapActions(['fetchingAction']),
@@ -97,5 +121,16 @@ export default {
   width: 2px;
   height: 2px;
   background-color: #17bd70;
+}
+
+.heroText {
+  display: inline-block;
+}
+
+.word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(-100px);
+  color: #17bd70;
 }
 </style>
