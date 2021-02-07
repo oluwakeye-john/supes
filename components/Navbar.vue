@@ -16,12 +16,25 @@
 </template>
 
 <script>
+import { TimelineLite, Back } from 'gsap'
 export default {
   props: {
     absolute: {
       type: Boolean,
       default: false,
     },
+  },
+  mounted() {
+    const timeline = new TimelineLite()
+    timeline.to('.navbar__image', {
+      duration: 5,
+      y: 15,
+      rotate: 30,
+
+      yoyo: true,
+      repeat: -1,
+      ease: Back.easeInOut,
+    })
   },
 }
 </script>
@@ -36,6 +49,6 @@ export default {
 .navbar__image {
   width: 70px;
   height: 70px;
-  animation: slide 2s ease-in-out infinite alternate;
+  /* animation: slide 2s ease-in-out infinite alternate; */
 }
 </style>

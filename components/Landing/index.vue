@@ -22,7 +22,7 @@
           <span class="word">Heroes. </span>
         </h1>
         <form
-          class="flex flex-col md:flex-row md:justify-center"
+          class="flex flex-col md:flex-row md:justify-center landing-form"
           @submit.prevent="submit"
         >
           <input
@@ -57,6 +57,12 @@ export default {
       stagger: 0.1,
       ease: Back.easeInOut,
       color: '#fff',
+    })
+
+    timeline.to('.landing-form', {
+      y: 0,
+      duration: 0.8,
+      opacity: 1,
     })
   },
   methods: {
@@ -105,8 +111,10 @@ export default {
 
 .cursor {
   position: absolute;
-  transition: 0.1s ease-out;
+  transition: 0.05s ease-out;
   transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -115,6 +123,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 100;
 }
 
 .cursor__dot {
@@ -132,5 +141,10 @@ export default {
   opacity: 0;
   transform: translateY(-100px);
   color: #17bd70;
+}
+
+.landing-form {
+  transform: translateY(70px);
+  opacity: 0;
 }
 </style>

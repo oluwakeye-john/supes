@@ -10,7 +10,18 @@
 </template>
 
 <script>
-export default {}
+import { TimelineLite } from 'gsap'
+export default {
+  mounted() {
+    const timeline = new TimelineLite()
+    timeline.to('.spinner', {
+      duration: 1.5,
+      rotate: 360,
+      repeat: -1,
+      yoyo: true,
+    })
+  },
+}
 </script>
 
 <style scoped>
@@ -31,8 +42,6 @@ export default {}
   border-color: transparent;
   border-color: #17bd70;
   padding: 7px;
-
-  animation: spin2 1s infinite linear alternate;
 }
 
 .spinner-image {
