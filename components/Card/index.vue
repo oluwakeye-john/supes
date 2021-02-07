@@ -16,19 +16,23 @@
           >{{ characterType }}</span
         >
       </div>
-      <div class="p-4 flex justify-between items-start">
+      <div class="p-4 flex justify-between items-center">
         <div>
           <h1 class="text-white text-lg md:text-2xl">{{ character.name }}</h1>
           <p class="text-gray-500 text-sm">
             {{ character.biography['full-name'] }}
           </p>
         </div>
+        <p class="text-white">
+          {{ overallStat }}
+        </p>
       </div>
     </nuxt-link>
   </div>
 </template>
 
 <script>
+import { getOverallStat } from '../../utils/character'
 export default {
   props: {
     character: {
@@ -56,6 +60,9 @@ export default {
           return 'Unknown'
         }
       }
+    },
+    overallStat() {
+      return getOverallStat(this.character)
     },
   },
   methods: {
