@@ -4,7 +4,7 @@
 
     <div v-if="!items.length">
       <img
-        class="object-cover m-auto mt-5 h-64"
+        class="object-cover m-auto mt-5 h-64 empty-placeholder"
         src="https://res.cloudinary.com/johnprops/image/upload/c_scale,f_auto,w_400/v1612652863/superheroes/not-found_eavxgx.png"
       />
       <div class="text-center mt-4 text-gray-500">
@@ -36,3 +36,10 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.empty-placeholder {
+  animation: wubble-in 1.3s 1 linear forwards;
+  animation-delay: 1s;
+}
+</style>

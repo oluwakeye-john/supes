@@ -99,4 +99,28 @@ body {
     transform: scale(20);
   }
 }
+
+@keyframes wubble-in {
+  0% {
+    transform: scale(0.8);
+  }
+  12.5% {
+    transform: scale(1.1);
+  }
+  25% {
+    transform: scale(1);
+  }
+  37.5% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(1);
+  }
+  62.5% {
+    transform: scale(1.1);
+  }
+  75% {
+    transform: scale(1);
+  }
+}
 </style>
