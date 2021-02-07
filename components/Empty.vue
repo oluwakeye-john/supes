@@ -6,16 +6,10 @@
 </template>
 
 <script>
-import { TimelineLite, Elastic } from 'gsap'
+import animations from '../animations'
 export default {
   mounted() {
-    const timeline = new TimelineLite()
-    timeline.to('.empty-placeholder', {
-      duration: 1,
-      scale: 1,
-      opacity: 1,
-      ease: Elastic.easeInOut,
-    })
+    animations.emptyPlaceholder('.empty-placeholder')
   },
 }
 </script>

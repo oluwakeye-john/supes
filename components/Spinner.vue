@@ -10,16 +10,10 @@
 </template>
 
 <script>
-import { TimelineLite } from 'gsap'
+import animations from '~/animations'
 export default {
   mounted() {
-    const timeline = new TimelineLite()
-    timeline.to('.spinner', {
-      duration: 1.5,
-      rotate: 360,
-      repeat: -1,
-      yoyo: true,
-    })
+    animations.spinnerAnimation('.spinner')
   },
 }
 </script>

@@ -7,10 +7,7 @@
     <div class="landing-container__image" />
     <div class="landing-flex">
       <div class="px-6 md:px-20">
-        <h1
-          ref="heroText"
-          class="text-white text-3xl md:text-5xl font-bold mb-10 heroText"
-        >
+        <h1 class="text-white text-3xl md:text-5xl font-bold mb-10">
           <span class="word">All </span>
           <span class="word">your </span>
           <span class="word">supes </span>
@@ -33,6 +30,10 @@
           />
           <Button>Go 🚀 💥</Button>
         </form>
+
+        <div class="starfish-container">
+          <img class="starfish" src="../../assets/starfish.png" />
+        </div>
       </div>
     </div>
   </div>
@@ -40,7 +41,7 @@
 
 <script>
 import { mapActions } from 'vuex'
-import { TimelineLite, Back } from 'gsap'
+import animations from '~/animations'
 export default {
   data() {
     return {
@@ -48,21 +49,10 @@ export default {
     }
   },
   mounted() {
-    const timeline = new TimelineLite()
-
-    timeline.to('.word', {
-      duration: 0.8,
-      opacity: 1,
-      y: 0,
-      stagger: 0.1,
-      ease: Back.easeInOut,
-      color: '#fff',
-    })
-
-    timeline.to('.landing-form', {
-      y: 0,
-      duration: 0.8,
-      opacity: 1,
+    animations.landingAnimation({
+      word: '.word',
+      form: '.landing-form',
+      starfish: '.starfish',
     })
   },
   methods: {
@@ -84,6 +74,7 @@ export default {
   position: relative;
   font-size: 14px;
   cursor: none;
+  overflow: hidden;
 }
 
 .landing-flex {
@@ -111,7 +102,6 @@ export default {
 
 .cursor {
   position: absolute;
-  transition: 0.05s ease-out;
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
@@ -145,6 +135,20 @@ export default {
 
 .landing-form {
   transform: translateY(70px);
+  opacity: 0;
+}
+
+.starfish-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.starfish {
+  width: 220px;
+  height: 220px;
+  margin: 0 auto;
   opacity: 0;
 }
 </style>

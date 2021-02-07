@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { TimelineLite, Back } from 'gsap'
+import animations from '~/animations'
 export default {
   props: {
     absolute: {
@@ -25,15 +25,7 @@ export default {
     },
   },
   mounted() {
-    const timeline = new TimelineLite()
-    timeline.to('.navbar__image', {
-      duration: 5,
-      y: 15,
-
-      yoyo: true,
-      repeat: -1,
-      ease: Back.easeInOut,
-    })
+    animations.logoAnimation('.navbar__image')
   },
 }
 </script>
