@@ -29,7 +29,6 @@ export default {
     timeline.to('.navbar__image', {
       duration: 5,
       y: 15,
-      rotate: 30,
 
       yoyo: true,
       repeat: -1,
@@ -49,6 +48,5 @@ export default {
 .navbar__image {
   width: 70px;
   height: 70px;
-  /* animation: slide 2s ease-in-out infinite alternate; */
 }
 </style>

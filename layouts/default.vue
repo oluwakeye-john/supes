@@ -34,21 +34,6 @@ body {
   min-height: 100vh;
 }
 
-@keyframes slide {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(15px);
-  }
-}
-
-@keyframes spin2 {
-  to {
-    transform: rotate(360deg) scale(1.1);
-  }
-}
-
 @keyframes glow {
   to {
     filter: drop-shadow(0 -6mm 4mm rgb(160, 0, 210));
@@ -97,42 +82,6 @@ body {
   }
   30% {
     transform: scale(20);
-  }
-}
-
-@keyframes wubble-in {
-  0% {
-    transform: scale(0.8);
-  }
-  12.5% {
-    transform: scale(1.1);
-  }
-  25% {
-    transform: scale(1);
-  }
-  37.5% {
-    transform: scale(1.2);
-  }
-  50% {
-    transform: scale(1);
-  }
-  62.5% {
-    transform: scale(1.1);
-  }
-  75% {
-    transform: scale(1);
-  }
-}
-
-@keyframes slide-left-out {
-  to {
-    transform: translateX(-500px);
-  }
-}
-
-@keyframes slide-right-out {
-  to {
-    transform: translateX(500px);
   }
 }
 </style>

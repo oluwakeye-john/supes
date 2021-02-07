@@ -2,14 +2,15 @@
   <div>
     <Navbar />
     <MarginalContainer>
-      <div class="flex flex-col md:flex-row md:justify-between items-center">
+      <div
+        class="flex flex-col md:flex-row md:justify-between items-center mb-10"
+      >
         <img src="../assets/404.png" class="not-found-image w-full md:w-5/12" />
 
         <div class="text-gray-500 w-full md:w-7/12 text-center">
-          <h1 class="text-gray-300 text-5xl font-bold">404</h1>
-          <p>That page has been snapped out existence.</p>
-          <p>Unfortunately, the mad titan was a step ahead of you.</p>
-          <p>To snap back, click the gauntlet.</p>
+          <h1 class="text-gray-300 text-5xl font-bold">F*ck</h1>
+          <p>The page you’re looking for could have been deleted</p>
+          <p>or never have existed..</p>
 
           <!-- <nuxt-link to="/"> -->
           <div ref="gauntlet">
@@ -19,6 +20,7 @@
               @click="goHome"
             />
           </div>
+          <p class="text-gray-300">Snap the gauntlet to go home.</p>
           <!-- </nuxt-link> -->
         </div>
       </div>
