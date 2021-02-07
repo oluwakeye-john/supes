@@ -5,23 +5,28 @@
       <div
         class="flex flex-col md:flex-row md:justify-between items-center mb-10"
       >
-        <img src="../assets/404.png" class="not-found-image w-full md:w-5/12" />
+        <img
+          src="https://res.cloudinary.com/johnprops/image/upload/c_scale,f_auto,h_500/v1612728251/superheroes/404_gcxspr.png"
+          class="not-found-image w-full md:w-5/12"
+        />
 
         <div class="text-gray-500 w-full md:w-7/12 text-center">
-          <h1 class="text-gray-300 text-5xl font-bold">F*ck</h1>
-          <p>The page you’re looking for could have been deleted</p>
-          <p>or never have existed..</p>
+          <h1 class="text-gray-300 text-5xl font-bold">Sorry</h1>
+          <p>What you are looking for has been deleted</p>
+          <p>or prolly never existed.</p>
 
-          <!-- <nuxt-link to="/"> -->
           <div ref="gauntlet">
             <img
-              src="../assets/gauntlet.png"
+              src="https://res.cloudinary.com/johnprops/image/upload/c_scale,f_auto,h_200/v1612728067/superheroes/gauntlet_wdj3me.png"
               class="h-20 mx-auto mt-10 mb-3 home-image"
               @click="goHome"
             />
           </div>
-          <p class="text-gray-300">Snap the gauntlet to go home.</p>
-          <!-- </nuxt-link> -->
+          <p class="text-sm">
+            Click
+            <span class="up-icon">☝️</span>
+            to go home
+          </p>
         </div>
       </div>
     </MarginalContainer>
@@ -29,13 +34,14 @@
 </template>
 
 <script>
+import animations from '~/animations'
 export default {
+  mounted() {
+    animations.upIconAnimation('.up-icon')
+  },
   methods: {
     goHome() {
-      this.$refs.gauntlet.style.animation = 'explode 2s 1 linear'
-      setTimeout(() => {
-        this.$router.push('/')
-      }, 1500)
+      this.$router.push('/')
     },
   },
 }
@@ -47,7 +53,8 @@ export default {
   object-fit: cover;
 }
 
-.home-image {
-  animation: glow 1s infinite linear alternate;
+.up-icon {
+  display: inline-block;
+  font-size: 25px;
 }
 </style>

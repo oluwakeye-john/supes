@@ -1,13 +1,13 @@
-import { Back, gsap } from 'gsap'
+import { gsap, Linear } from 'gsap'
 
 const logoAnimation = (target: string) => {
   gsap.to(target, {
-    duration: 5,
+    duration: 3,
     y: 15,
 
     yoyo: true,
     repeat: -1,
-    ease: Back.easeInOut,
+    ease: Linear.easeInOut,
   })
 }
 

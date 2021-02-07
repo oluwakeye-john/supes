@@ -9,8 +9,11 @@
         />
         <span
           class="absolute top-0 right-0 text-white px-2 mt-2 mr-2 text-xs rounded font-bold bg-red-800"
-          :class="{ 'bg-green-800': character.biography.alignment === 'good' }"
-          >{{ character.biography.alignment }}</span
+          :class="{
+            'bg-green-800': characterType === 'Hero',
+            'bg-orange-800': characterType === 'Neutral',
+          }"
+          >{{ characterType }}</span
         >
       </div>
       <div class="p-4 flex justify-between items-start">
@@ -37,6 +40,23 @@ export default {
     link() {
       return `/character/${this.character.id}`
     },
+
+    characterType() {
+      switch (this.character.biography.alignment) {
+        case 'good': {
+          return 'Hero'
+        }
+        case 'bad': {
+          return 'Villian'
+        }
+        case 'neutral': {
+          return 'Neutral'
+        }
+        default: {
+          return 'Unknown'
+        }
+      }
+    },
   },
   methods: {
     handleImageError(e) {
@@ -46,4 +66,3 @@ export default {
   },
 }
 </script>
-
