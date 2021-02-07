@@ -39,7 +39,7 @@ export default {
 
 <style scoped>
 .empty-placeholder {
-  animation: wubble-in 1.3s 1 linear forwards;
-  animation-delay: 1s;
+  animation: wubble-in 1.3s linear forwards;
+  animation-delay: 0.5s;
 }
 </style>

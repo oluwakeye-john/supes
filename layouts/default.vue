@@ -123,4 +123,16 @@ body {
     transform: scale(1);
   }
 }
+
+@keyframes slide-left-out {
+  to {
+    transform: translateX(-500px);
+  }
+}
+
+@keyframes slide-right-out {
+  to {
+    transform: translateX(500px);
+  }
+}
 </style>
