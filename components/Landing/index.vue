@@ -29,7 +29,7 @@
             v-model="search"
             required
             class="bg-bgColor border-gray-700 border text-white rounded-sm outline-none px-4 py-2 w-full md:w-1/2 mb-5 md:mb-0"
-            placeholder="Search for a superhero. E.g Batman"
+            placeholder="Batman"
           />
           <Button>Go 🚀 💥</Button>
         </form>

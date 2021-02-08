@@ -1,10 +1,11 @@
-import { UPDATE_FETCHING, UPDATE_SEARCH_RESULT } from './types'
+import { UPDATE_FETCHING, UPDATE_SEARCH_RESULT, UPDATE_TRENDING } from './types'
 import { AXIOS_REQUESTS } from '~/services/types'
 
 export const state = () => ({
   results: [],
   searchResult: '',
   fetching: true,
+  trending: [],
 })
 
 export const actions = {
@@ -22,6 +23,14 @@ export const actions = {
     }
     commit(UPDATE_FETCHING, false)
   },
+  async getTrending({ commit }) {
+    const ids = [346, 204, 655, 70, 659, 644, 579, 332]
+    const all = ids.map((id) => {
+      return this.$axios.$get(AXIOS_REQUESTS.GET_ID(id))
+    })
+    const response = await Promise.all(all)
+    commit(UPDATE_TRENDING, response)
+  },
   fetchingAction({ commit }, val) {
     commit(UPDATE_FETCHING, val)
   },
@@ -30,6 +39,9 @@ export const actions = {
 export const mutations = {
   [UPDATE_FETCHING](state, val) {
     state.fetching = val
+  },
+  [UPDATE_TRENDING](state, res) {
+    state.trending = res
   },
   [UPDATE_SEARCH_RESULT](state, res) {
     state.searchResult = res

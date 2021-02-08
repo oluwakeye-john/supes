@@ -1,5 +1,6 @@
 export const UPDATE_SEARCH_RESULT = 'UPDATE_SEARCH_RESULT'
 export const UPDATE_FETCHING = 'UPDATE_FETCHING'
+export const UPDATE_TRENDING = 'UPDATE_TRENDING'
 
 export interface Character {
   id: string
