@@ -152,6 +152,8 @@ export default {
   bottom: 0;
   left: 0;
   width: 100%;
+  pointer-events: none;
+  z-index: -1;
 }
 
 .starfish {
