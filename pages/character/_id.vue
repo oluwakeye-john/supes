@@ -31,7 +31,7 @@
 
 <script>
 import { AXIOS_REQUESTS } from '../../services/types'
-// import { getMajorStat } from '../../utils/character'
+import remoteImages from '~/assets/remote'
 export default {
   data() {
     return {
@@ -67,10 +67,6 @@ export default {
         { name: 'Franchise', value: this.biography.publisher },
         { name: 'Gender', value: this.appearance.gender },
         { name: 'Occupation', value: this.work.occupation },
-        // {
-        //   name: 'Strength',
-        //   value: getMajorStat(this.character),
-        // },
       ]
     },
     pageTitle() {
@@ -81,6 +77,7 @@ export default {
       }
     },
   },
+
   mounted() {
     this.id = this.$route.params.id
     this.get()
@@ -92,8 +89,7 @@ export default {
       this.fetching = false
     },
     handleImageError(e) {
-      e.target.src =
-        'https://res.cloudinary.com/johnprops/image/upload/c_scale,f_auto,w_480/v1612654067/superheroes/Placeholder_couple_superhero_i4rncf.png'
+      e.target.src = remoteImages.emptyPlaceholder
     },
   },
 }

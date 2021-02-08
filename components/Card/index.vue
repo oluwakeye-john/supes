@@ -34,6 +34,7 @@
 
 <script>
 import { getOverallStat } from '../../utils/character'
+import remoteImages from '~/assets/remote'
 export default {
   props: {
     character: {
@@ -68,8 +69,7 @@ export default {
   },
   methods: {
     handleImageError(e) {
-      e.target.src =
-        'https://res.cloudinary.com/johnprops/image/upload/c_scale,f_auto,w_480/v1612654067/superheroes/Placeholder_couple_superhero_i4rncf.png'
+      e.target.src = remoteImages.emptyPlaceholder
     },
   },
 }

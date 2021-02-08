@@ -1,13 +1,19 @@
 <template>
   <img
     class="object-cover m-auto mt-5 h-64 empty-placeholder"
-    src="https://res.cloudinary.com/johnprops/image/upload/c_scale,f_auto,w_400/v1612652863/superheroes/not-found_eavxgx.png"
+    :src="characterNotFound"
   />
 </template>
 
 <script>
 import animations from '../animations'
+import remoteImages from '~/assets/remote'
 export default {
+  computed: {
+    characterNotFound() {
+      return remoteImages.characterNotFound
+    },
+  },
   mounted() {
     animations.emptyPlaceholder('.empty-placeholder')
   },

@@ -1,17 +1,18 @@
 <template>
   <div class="spinner-container">
-    <div class="spinner">
-      <img
-        class="spinner-image"
-        src="https://res.cloudinary.com/johnprops/image/upload/c_scale,f_auto,w_80/v1612652533/superheroes/loader_hmgb8g.png"
-      />
-    </div>
+    <div class="spinner"><img class="spinner-image" :src="spinner" /></div>
   </div>
 </template>
 
 <script>
 import animations from '~/animations'
+import remoteImages from '~/assets/remote'
 export default {
+  computed: {
+    spinner() {
+      return remoteImages.spinner
+    },
+  },
   mounted() {
     animations.spinnerAnimation('.spinner')
   },

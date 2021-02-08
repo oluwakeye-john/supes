@@ -4,7 +4,10 @@
     <div ref="cursor" class="cursor">
       <div class="cursor__dot" />
     </div>
-    <div class="landing-container__image" />
+    <div
+      class="landing-container__image"
+      :style="{ backgroundImage: landingImage }"
+    />
     <div class="landing-flex">
       <div class="px-6 md:px-20">
         <h1 class="text-white text-3xl md:text-5xl font-bold mb-10">
@@ -41,12 +44,18 @@
 
 <script>
 import { mapActions } from 'vuex'
+import remoteImages from '../../assets/remote'
 import animations from '~/animations'
 export default {
   data() {
     return {
       search: '',
     }
+  },
+  computed: {
+    landingImage() {
+      return `url(${remoteImages.landing})`
+    },
   },
   mounted() {
     animations.landingAnimation({
@@ -93,7 +102,7 @@ export default {
   left: 0;
   height: 100%;
   width: 100%;
-  background-image: url('https://res.cloudinary.com/johnprops/image/upload/c_scale,f_auto,q_100,w_1400/v1612650797/superheroes/bg6_hi23sj.jpg');
+  /* background-image: url(); */
   background-position: bottom;
   background-size: cover;
   background-repeat: no-repeat;
