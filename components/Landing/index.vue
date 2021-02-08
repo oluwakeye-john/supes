@@ -8,10 +8,18 @@
     <div class="landing-flex">
       <div class="px-6 md:px-20">
         <h1 class="text-white text-3xl md:text-5xl font-bold mb-10">
-          All your supes in one place. Villians and Heroes
+          <span class="word">All </span>
+          <span class="word">your </span>
+          <span class="word">supes </span>
+          <span class="word">in </span>
+          <span class="word">one </span>
+          <span class="word">place. </span>
+          <span class="word">Villians </span>
+          <span class="word">and </span>
+          <span class="word">Heroes. </span>
         </h1>
         <form
-          class="flex flex-col md:flex-row md:justify-center"
+          class="flex flex-col md:flex-row md:justify-center landing-form"
           @submit.prevent="submit"
         >
           <input
@@ -22,6 +30,10 @@
           />
           <Button>Go 🚀 💥</Button>
         </form>
+
+        <div class="starfish-container">
+          <img class="starfish" src="../../assets/starfish.png" />
+        </div>
       </div>
     </div>
   </div>
@@ -29,11 +41,19 @@
 
 <script>
 import { mapActions } from 'vuex'
+import animations from '~/animations'
 export default {
   data() {
     return {
       search: '',
     }
+  },
+  mounted() {
+    animations.landingAnimation({
+      word: '.word',
+      form: '.landing-form',
+      starfish: '.starfish',
+    })
   },
   methods: {
     ...mapActions(['fetchingAction']),
@@ -54,6 +74,7 @@ export default {
   position: relative;
   font-size: 14px;
   cursor: none;
+  overflow: hidden;
 }
 
 .landing-flex {
@@ -81,8 +102,9 @@ export default {
 
 .cursor {
   position: absolute;
-  transition: 0.1s ease-out;
   transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -91,11 +113,42 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 100;
 }
 
 .cursor__dot {
   width: 2px;
   height: 2px;
   background-color: #17bd70;
+}
+
+.heroText {
+  display: inline-block;
+}
+
+.word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(-100px);
+  color: #17bd70;
+}
+
+.landing-form {
+  transform: translateY(70px);
+  opacity: 0;
+}
+
+.starfish-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.starfish {
+  width: 220px;
+  height: 220px;
+  margin: 0 auto;
+  opacity: 0;
 }
 </style>

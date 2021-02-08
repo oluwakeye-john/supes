@@ -33,19 +33,4 @@ body {
   margin: 0 auto;
   min-height: 100vh;
 }
-
-@keyframes slide {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(15px);
-  }
-}
-
-@keyframes spin2 {
-  to {
-    transform: rotate(360deg) scale(1.1);
-  }
-}
 </style>

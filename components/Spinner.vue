@@ -10,7 +10,12 @@
 </template>
 
 <script>
-export default {}
+import animations from '~/animations'
+export default {
+  mounted() {
+    animations.spinnerAnimation('.spinner')
+  },
+}
 </script>
 
 <style scoped>
@@ -31,8 +36,6 @@ export default {}
   border-color: transparent;
   border-color: #17bd70;
   padding: 7px;
-
-  animation: spin2 1s infinite linear alternate;
 }
 
 .spinner-image {

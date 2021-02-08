@@ -6,6 +6,10 @@ export default {
     host: '0.0.0.0',
   },
 
+  generate: {
+    fallback: true,
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'superheroes',

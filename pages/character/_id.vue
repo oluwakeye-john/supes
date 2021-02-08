@@ -7,6 +7,7 @@
         <img
           class="detail-image w-full md:w-4/12 object-cover"
           :src="character.image.url"
+          @error="handleImageError"
         />
 
         <div class="w-full md:w-7/12 mt-5 md:mt-0">
@@ -81,6 +82,10 @@ export default {
       const response = await this.$axios.$get(AXIOS_REQUESTS.GET_ID(this.id))
       this.character = response
       this.fetching = false
+    },
+    handleImageError(e) {
+      e.target.src =
+        'https://res.cloudinary.com/johnprops/image/upload/c_scale,f_auto,w_480/v1612654067/superheroes/Placeholder_couple_superhero_i4rncf.png'
     },
   },
 }

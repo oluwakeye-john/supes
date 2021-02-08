@@ -8,6 +8,9 @@ export const state = () => ({
 })
 
 export const actions = {
+  prefetchAction() {
+    this.$axios.$get(AXIOS_REQUESTS.SEARCH(''))
+  },
   async searchAction({ commit }, query) {
     // commit(UPDATE_FETCHING, true)
     const response = await this.$axios.$get(AXIOS_REQUESTS.SEARCH(query))

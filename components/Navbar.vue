@@ -16,12 +16,16 @@
 </template>
 
 <script>
+import animations from '~/animations'
 export default {
   props: {
     absolute: {
       type: Boolean,
       default: false,
     },
+  },
+  mounted() {
+    animations.logoAnimation('.navbar__image')
   },
 }
 </script>
@@ -36,6 +40,5 @@ export default {
 .navbar__image {
   width: 70px;
   height: 70px;
-  animation: slide 2s ease-in-out infinite alternate;
 }
 </style>
