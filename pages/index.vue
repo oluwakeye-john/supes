@@ -1,5 +1,8 @@
 <template>
-  <Landing />
+  <div>
+    <Landing />
+    <Trending />
+  </div>
 </template>
 
 <script lang="ts">
@@ -9,9 +12,10 @@ import Vue from 'vue'
 export default Vue.extend({
   mounted() {
     this.prefetchAction()
+    this.getTrending()
   },
   methods: {
-    ...mapActions(['prefetchAction']),
+    ...mapActions(['prefetchAction', 'getTrending']),
   },
 })
 </script>

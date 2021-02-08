@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h1 class="text-white mb-10 text-2xl">{{ title }} ({{ items.length }})</h1>
+    <h1 class="text-white mb-10 text-2xl font-bold">
+      {{ title }} ({{ items.length }})
+    </h1>
 
     <div v-if="!items.length">
       <Empty />

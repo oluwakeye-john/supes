@@ -64,9 +64,10 @@ export default {
           name: 'Full Name',
           value: this.biography['full-name'] || this.character.name,
         },
-        { name: 'Franchise', value: this.biography.publisher },
-        { name: 'Gender', value: this.appearance.gender },
-        { name: 'Occupation', value: this.work.occupation },
+        { name: 'Race', value: this.appearance.race },
+        { name: 'Publisher', value: this.biography.publisher },
+        // { name: 'Occupation', value: this.work.occupation },
+        { name: 'Location', value: this.work.base },
       ]
     },
     pageTitle() {
