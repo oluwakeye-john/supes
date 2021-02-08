@@ -31,6 +31,7 @@
 
 <script>
 import { AXIOS_REQUESTS } from '../../services/types'
+// import { getMajorStat } from '../../utils/character'
 export default {
   data() {
     return {
@@ -59,10 +60,17 @@ export default {
     },
     tableItems() {
       return [
-        { name: 'Full Name', value: this.biography['full-name'] },
+        {
+          name: 'Full Name',
+          value: this.biography['full-name'] || this.character.name,
+        },
         { name: 'Franchise', value: this.biography.publisher },
         { name: 'Gender', value: this.appearance.gender },
         { name: 'Occupation', value: this.work.occupation },
+        // {
+        //   name: 'Strength',
+        //   value: getMajorStat(this.character),
+        // },
       ]
     },
     pageTitle() {
