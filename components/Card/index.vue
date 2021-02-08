@@ -23,8 +23,9 @@
             {{ character.biography['full-name'] }}
           </p>
         </div>
-        <p class="text-white">
+        <p class="text-white text-sm">
           {{ overallStat }}
+          <sup>%</sup>
         </p>
       </div>
     </nuxt-link>

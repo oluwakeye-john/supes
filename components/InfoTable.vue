@@ -4,7 +4,7 @@
       <span class="text-gray-300 font-bold w-24 inline-block">{{
         item.name
       }}</span>
-      {{ item.value }}
+      <span class="capitalize">{{ item.value }}</span>
     </p>
   </div>
 </template>

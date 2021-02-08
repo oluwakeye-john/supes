@@ -14,3 +14,21 @@ export const getOverallStat = (character) => {
 
   return Math.round(total / resp.length)
 }
+
+export const getMajorStat = (character) => {
+  const powerstats = character.powerstats
+  const stats = Object.keys(powerstats)
+
+  let highest = 0
+  let res = ''
+
+  stats.map((stat) => {
+    const val = Number(powerstats[stat])
+    if (!isNaN(val) && val > highest) {
+      highest = val
+      res = stat
+    }
+    return true
+  })
+  return res
+}
