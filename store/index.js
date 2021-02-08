@@ -24,7 +24,7 @@ export const actions = {
     commit(UPDATE_FETCHING, false)
   },
   async getTrending({ commit }) {
-    const ids = [346, 204, 655, 70, 659, 644, 579, 332]
+    const ids = [70, 655, 204, 346, 659, 644, 579, 332]
     const all = ids.map((id) => {
       return this.$axios.$get(AXIOS_REQUESTS.GET_ID(id))
     })
