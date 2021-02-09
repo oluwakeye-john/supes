@@ -1,4 +1,5 @@
-import { gsap, Linear } from 'gsap'
+import { Linear } from 'gsap'
+import gsap from './gsap'
 
 const logoAnimation = (target: string) => {
   gsap.to(target, {

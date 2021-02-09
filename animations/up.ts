@@ -1,4 +1,4 @@
-import { gsap } from 'gsap'
+import gsap from './gsap'
 
 const upIconAnimation = (target: string) => {
   gsap.to(target, {

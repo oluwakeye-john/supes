@@ -1,4 +1,5 @@
-import { Elastic, gsap } from 'gsap'
+import { Elastic } from 'gsap'
+import gsap from './gsap'
 
 const emptyPlaceholder = (target: string, cb?: any) => {
   gsap.to(target, {
